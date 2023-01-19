@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-StudySpringbootsApplication<study_springboots>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.study.study_springboots.StudySpringbootsApplication",
+      "projectName": "study_springboots",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
