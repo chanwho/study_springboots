@@ -7,12 +7,9 @@ import com.study.study_springboots.dao.AttachFileDao;
 import com.study.study_springboots.dao.CommonCodeOurDao;
 
 @Service
-public class CommonCodeOurService {
+public class AttachFileService {
     @Autowired
-    CommonCodeOurDao commonCodeOurDao;
-
-    @Autowired
-    AttachFileService attachFileService;
+    AttachFileDao attachFileDao;
 
     public Object deleteAndGetList(Object dataMap) {
         Object result = this.delete(dataMap);
@@ -22,50 +19,56 @@ public class CommonCodeOurService {
 
     public Object insertWithFilesAndGetList(Object dataMap) {
         // insert files
-        Object result = attachFileService.insertMulti(dataMap);
-        result = this.insertOne(dataMap);
+        Object result = this.insertOne(dataMap);
         result = this.getList(dataMap);
         return result;
     }
 
     public Object getList(Object dataMap) {
-        String sqlMapId = "CommonCodeOur.selectListByUID";
-        Object result = commonCodeOurDao.getList(sqlMapId, dataMap);
+        String sqlMapId = "AttachFile.selectListByUID";
+        Object result = attachFileDao.getList(sqlMapId, dataMap);
         return result;
     }
 
     public Object getOne(Object dataMap) {
-        String sqlMapId = "CommonCodeOur.selectByUID";
+        String sqlMapId = "AttachFile.selectByUID";
 
-        Object result = commonCodeOurDao.getOne(sqlMapId, dataMap);
+        Object result = attachFileDao.getOne(sqlMapId, dataMap);
         return result;
     }
 
     public Object updateOne(Object dataMap) {
-        String sqlMapId = "CommonCodeOur.updateByUID";
+        String sqlMapId = "AttachFile.updateByUID";
 
-        Object result = commonCodeOurDao.update(sqlMapId, dataMap);
+        Object result = attachFileDao.update(sqlMapId, dataMap);
         return result;
     }
 
     public Object insertOne(Object dataMap) {
-        String sqlMapId = "CommonCodeOur.insertWithUID";
+        String sqlMapId = "AttachFile.insertWithUID";
 
-        Object result = commonCodeOurDao.insert(sqlMapId, dataMap);
+        Object result = attachFileDao.insert(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object insertMulti(Object dataMap) {
+        String sqlMapId = "AttachFile.insertMulti";
+
+        Object result = attachFileDao.insert(sqlMapId, dataMap);
         return result;
     }
 
     public Object delete(Object dataMap) {
-        String sqlMapId = "CommonCodeOur.deleteByUID";
+        String sqlMapId = "AttachFile.deleteByUID";
 
-        Object result = commonCodeOurDao.delete(sqlMapId, dataMap);
+        Object result = attachFileDao.delete(sqlMapId, dataMap);
         return result;
     }
 
     public Object deleteMulti(Object dataMap) {
-        String sqlMapId = "CommonCodeOur.deleteMultiByUIDs";
+        String sqlMapId = "AttachFile.deleteMultiByUIDs";
 
-        Object result = commonCodeOurDao.delete(sqlMapId, dataMap);
+        Object result = attachFileDao.delete(sqlMapId, dataMap);
         return result;
     }
 }
