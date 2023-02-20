@@ -15,6 +15,7 @@
     <div> <a href="/board_our/list">/board_our BoardOurController list() /board_our/list.jsp</a> </div>
     <div> <a href="/jstlformats">jstl_formats.jsp</a> </div>
     <div> <a href="/commonCodeOur/">/commonCodeOur/list.jsp</a> </div>
+    <div> <a href="/commonCodeOur/listPagination/1">/commonCodeOur/list_pagination.jsp</a> </div>
 
 </body>
 

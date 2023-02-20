@@ -10,7 +10,7 @@
         where SOURCE_UNIQUE_SEQ = #{SOURCE_UNIQUE_SEQ};
     </select>
 
-    <!-- call AttachFiles.insertMulti -->
+        <!-- call AttachFile.insertMulti -->
     <insert id="insertMulti" parameterType="Map">
         insert into CIP_ATTACHFILE
         (ATTACHFILE_SEQ, SOURCE_UNIQUE_SEQ, ORGINALFILE_NAME, PHYSICALFILE_NAME
@@ -25,6 +25,5 @@
             ,#{attachfile.REGISTER_SEQ},sysdate(),#{attachfile.MODIFIER_SEQ},sysdate()
         </foreach>
     </insert>
-    
 
 </mapper>
